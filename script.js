@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* --- 2. Monospace HUD Terminal Simulator (Hero Section) --- */
     const terminalOutput = document.getElementById('terminal-output');
     const typingTextElement = document.querySelector('.typing-text');
-    
+
     if (typingTextElement && terminalOutput) {
         const command = 'npm run init-portfolio';
         const outputLines = [
@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clear initial text for dynamic load
         typingTextElement.textContent = '';
         terminalOutput.innerHTML = '';
-        
+
         let charIndex = 0;
-        
+
         const typeCommand = () => {
             if (charIndex < command.length) {
                 typingTextElement.textContent += command.charAt(charIndex);
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const renderBuildLines = () => {
             let lineIndex = 0;
-            
+
             const printNextLine = () => {
                 if (lineIndex < outputLines.length) {
                     const p = document.createElement('p');
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(printNextLine, 200);
                 }
             };
-            
+
             printNextLine();
         };
 
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                
+
                 // If it is a stat number inside, trigger rolling count
                 const statNums = entry.target.querySelectorAll('.stat-number');
                 statNums.forEach(num => {
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetStr = numElement.getAttribute('data-target');
         const isDecimal = targetStr.includes('.');
         const targetVal = parseFloat(targetStr);
-        
+
         let startVal = 0;
         const duration = 1500; // roll up duration
         const frameRate = 1000 / 60; // 60fps standard
@@ -171,14 +171,14 @@ document.addEventListener('DOMContentLoaded', () => {
             align-items: center;
             gap: 0.6rem;
         `;
-        
+
         toast.innerHTML = `
             <span style="color: #06b6d4; font-weight: bold;">✦</span>
             <span>${message}</span>
         `;
-        
+
         document.body.appendChild(toast);
-        
+
         // Trigger reveal
         setTimeout(() => {
             toast.style.transform = 'translateY(0)';
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Clear previous shell logs and reveal logs box
             tunnelLogs.innerHTML = '';
             tunnelLogs.classList.add('active');
-            
+
             // Disable submit to prevent secondary spamming during script loop
             sshSubmitBtn.disabled = true;
             sshSubmitBtn.style.opacity = '0.5';
@@ -268,14 +268,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         method: "POST",
                         body: formData
                     })
-                    .then(response => response.json())
-                    .then(data => {
-                        printPostLogs();
-                    })
-                    .catch(err => {
-                        // Fail gracefully into simulation so user experience is always fluid
-                        printPostLogs();
-                    });
+                        .then(response => response.json())
+                        .then(data => {
+                            printPostLogs();
+                        })
+                        .catch(err => {
+                            // Fail gracefully into simulation so user experience is always fluid
+                            printPostLogs();
+                        });
                 } else {
                     // Graceful visual simulation fallback
                     setTimeout(printPostLogs, 800);
@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.addEventListener('click', (e) => {
                 // Allow browser to execute natural download trigger
                 triggerToast('Packaging Vansh Dhumal\'s secure resume profile...');
-                
+
                 setTimeout(() => {
                     triggerToast('Secure PDF package downloaded.');
                 }, 1400);
@@ -342,5 +342,4 @@ document.addEventListener('DOMContentLoaded', () => {
             triggerToast(`Initializing sandbox tunnel for "${projectTitle}" deployment...`);
         });
     });
-
 });
