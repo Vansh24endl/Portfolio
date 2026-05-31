@@ -76,6 +76,7 @@ body {
     -webkit-font-smoothing: antialiased;
     cursor: none;
     /* Hide default cursor to enable gorgeous custom cursor tracker */
+    position: relative; /* Position context for bg-glow-container */
 }
 
 /* --- Global Section & Typographic Layouts --- */
@@ -132,6 +133,17 @@ ul {
 }
 
 /* --- Ambient Floating Mesh Glows & Background Shapes --- */
+.bg-glow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
 .bg-glow {
     position: absolute;
     width: 700px;
@@ -164,6 +176,7 @@ ul {
     left: 0;
     pointer-events: none;
     z-index: 1;
+    overflow: hidden; /* Prevent animated shapes from causing horizontal overflow */
 }
 
 .page-decor .shape {
@@ -514,8 +527,10 @@ ul {
     font-weight: 800;
     font-size: 1.45rem;
     letter-spacing: -1.5px;
+    color: var(--accent-cyan); /* Fallback color for browsers with text gradient limitations */
     background: linear-gradient(135deg, var(--accent-indigo) 0%, var(--accent-cyan) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: var(--transition-smooth);
 }
@@ -2034,6 +2049,7 @@ h1.hero-name {
     inset: 0;
     pointer-events: none;
     z-index: 1;
+    overflow: hidden; /* Prevent shapes from causing horizontal overflow */
 }
 
 .contact-decor .shape {
