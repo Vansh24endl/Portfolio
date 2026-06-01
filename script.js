@@ -67,9 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 customCursorGlow.classList.add('active');
             }
 
+            // Immediately position the main cursor using hardware-accelerated transform
+            customCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+
             // Metred emitter for mouse trailing code nodes
             const dist = Math.hypot(mouseX - lastTrailX, mouseY - lastTrailY);
-            if (dist > 35) { // Spawn particle every 35px moved
+            if (dist > 50) { // Spawn particle every 50px moved (optimized from 35px)
                 spawnTrailParticle(mouseX, mouseY);
                 lastTrailX = mouseX;
                 lastTrailY = mouseY;
@@ -82,11 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             glowX += (mouseX - glowX) * ease;
             glowY += (mouseY - glowY) * ease;
 
-            customCursor.style.left = mouseX + 'px';
-            customCursor.style.top = mouseY + 'px';
-
-            customCursorGlow.style.left = glowX + 'px';
-            customCursorGlow.style.top = glowY + 'px';
+            customCursorGlow.style.transform = `translate3d(${glowX}px, ${glowY}px, 0) translate(-50%, -50%)`;
 
             requestAnimationFrame(animateGlow);
         };
