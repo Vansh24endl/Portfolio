@@ -1,7 +1,3 @@
-/* ==========================================================================
-   INTERACTIVE LOGIC & CYBERNETIC FX - VANSH DHUMAL PORTFOLIO
-   ========================================================================== */
-
 async function loadComponent(placeholderId, filePath) {
     const placeholder = document.getElementById(placeholderId);
     if (!placeholder) return;
@@ -15,7 +11,6 @@ async function loadComponent(placeholderId, filePath) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    // Start loading templates immediately
     await Promise.all([
         loadComponent('about-placeholder', 'about.html')
     ]);
@@ -23,8 +18,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function initPortfolio() {
-
-    /* --- Cyber Theme Switcher Logic --- */
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
     if (themeToggleBtn) {
         const themes = ['dark', 'light', 'system'];
@@ -84,7 +77,6 @@ function initPortfolio() {
         });
     }
 
-    /* --- 1. Cyber Boot Preloader & Falling Particles --- */
     const preloader = document.getElementById('preloader');
     const loaderParticles = document.getElementById('loader-particles');
 
@@ -92,13 +84,11 @@ function initPortfolio() {
         const particlesList = ['0', '1', '+', '•', '*', 'vd'];
         const numParticles = 40;
 
-        // Spawn drifting binary/telemetry particles inside loader backdrop
         for (let i = 0; i < numParticles; i++) {
             const particle = document.createElement('div');
             particle.className = 'loader-petal';
             particle.textContent = particlesList[Math.floor(Math.random() * particlesList.length)];
 
-            // Random properties to simulate floating depth
             const scale = (Math.random() * 0.7 + 0.4).toFixed(2);
             const drift = Math.floor(Math.random() * 200 - 100) + 'px';
             const spin = Math.floor(Math.random() * 360) + 'deg';
@@ -109,7 +99,6 @@ function initPortfolio() {
             particle.style.setProperty('--drift', drift);
             particle.style.setProperty('--spin', spin);
 
-            // Stagger animation triggers
             particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
             particle.style.animationDelay = (Math.random() * 4) + 's';
             particle.style.animationIterationCount = 'infinite';
@@ -117,14 +106,13 @@ function initPortfolio() {
             loaderParticles.appendChild(particle);
         }
 
-        // Fade out preloader screen smoothly after page loads
         const fadeOutPreloader = () => {
             setTimeout(() => {
                 preloader.classList.add('loader-root--out');
                 setTimeout(() => {
                     preloader.remove();
                 }, 700);
-            }, 1800); // 1.8s boot time to let the recruiter appreciate the boot logs
+            }, 1800); 
         };
 
         if (document.readyState === 'complete') {
@@ -134,7 +122,6 @@ function initPortfolio() {
         }
     }
 
-    /* --- 2. High-Precision HUD Cursor & Binary Code Trail --- */
     const customCursor = document.getElementById('custom-cursor');
     const customCursorGlow = document.getElementById('custom-cursor-glow');
 
@@ -143,7 +130,6 @@ function initPortfolio() {
         let glowX = 0, glowY = 0;
         let lastTrailX = 0, lastTrailY = 0;
 
-        // Reveal cursors once pointer moves
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
@@ -153,21 +139,19 @@ function initPortfolio() {
                 customCursorGlow.classList.add('active');
             }
 
-            // Immediately position the main cursor using hardware-accelerated transform
             customCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
 
-            // Metred emitter for mouse trailing code nodes
             const dist = Math.hypot(mouseX - lastTrailX, mouseY - lastTrailY);
-            if (dist > 50) { // Spawn particle every 50px moved (optimized from 35px)
+            if (dist > 50) { 
                 spawnTrailParticle(mouseX, mouseY);
                 lastTrailX = mouseX;
                 lastTrailY = mouseY;
             }
         });
 
-        // Precision lagging outer glowing ring interpolation
+      
         const animateGlow = () => {
-            const ease = 0.16; // Lerp dampener
+            const ease = 0.16; 
             glowX += (mouseX - glowX) * ease;
             glowY += (mouseY - glowY) * ease;
 
@@ -177,7 +161,6 @@ function initPortfolio() {
         };
         requestAnimationFrame(animateGlow);
 
-        // Bind hovering state triggers to all interactive tags
         const bindHoverTargets = () => {
             const interactives = document.querySelectorAll('a, button, input, textarea, .tag, .skills-tag-pill, .marquee-item');
             interactives.forEach(node => {
@@ -187,11 +170,9 @@ function initPortfolio() {
         };
         bindHoverTargets();
 
-        // Re-bind targets dynamically for async changes
         const observer = new MutationObserver(() => bindHoverTargets());
         observer.observe(document.body, { childList: true, subtree: true });
 
-        // Spawns tech trailing code elements that drift and dissolve
         function spawnTrailParticle(x, y) {
             const particle = document.createElement('div');
             particle.className = 'leaf-trail';
@@ -215,14 +196,12 @@ function initPortfolio() {
 
             document.body.appendChild(particle);
 
-            // Clean element after animation duration
             setTimeout(() => {
                 particle.remove();
             }, 1200);
         }
     }
 
-    /* --- 3. Expanding Sticky Translucent Navigation Bar --- */
     const navbar = document.getElementById('navbar');
     if (navbar) {
         window.addEventListener('scroll', () => {
@@ -233,8 +212,6 @@ function initPortfolio() {
             }
         });
     }
-
-    /* --- 4. Responsive Mobile Navigation drawer Menu --- */
     const menuToggle = document.getElementById('menu-toggle');
     const navLinksContainer = document.getElementById('nav-links');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -270,7 +247,6 @@ function initPortfolio() {
         });
     }
 
-    /* --- 5. Dynamic Role Telemetry Typer Cycling --- */
     const roleDynamicText = document.getElementById('role-dynamic-text');
     if (roleDynamicText) {
         roleDynamicText.textContent = '';
@@ -310,8 +286,6 @@ function initPortfolio() {
 
         setTimeout(typeRole, 650);
     }
-
-    /* --- 6. Monospace HUD Terminal Simulator (Hero Section) --- */
     const terminalOutput = document.getElementById('terminal-output');
     const typingTextElement = document.querySelector('.typing-text');
 
@@ -358,12 +332,10 @@ function initPortfolio() {
         setTimeout(typeCommand, 1500);
     }
 
-    /* --- 7. Real-Time Coordinates Leaflet Map (Indore) --- */
     const mapContainer = document.getElementById('contact-map');
     if (mapContainer) {
-        const indoreCoords = [22.7196, 75.8577]; // Indore, India coordinates
+        const indoreCoords = [22.7196, 75.8577];
 
-        // Initialize Leaflet map centered at Indore, disabling zoom scroll for fluid page scroll spy
         const map = L.map('contact-map', {
             center: indoreCoords,
             zoom: 12,
@@ -371,28 +343,23 @@ function initPortfolio() {
             scrollWheelZoom: false
         });
 
-        // Elegant OpenStreetMap minimal tiles representation
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        // Add sleek HUD zoom controller at bottom right
         L.control.zoom({
             position: 'bottomright'
         }).addTo(map);
 
-        // Create high-precision pulsing neon coordinate indicator
         const customNeonMarker = L.divIcon({
             className: 'neon-pulse-icon',
             iconSize: [16, 16],
             iconAnchor: [8, 8]
         });
 
-        // Place marker on Indore map canvas
         const marker = L.marker(indoreCoords, { icon: customNeonMarker }).addTo(map);
 
-        // Bind sleek command printout popup
         marker.bindPopup(`
             <div style="font-family:'Fira Code',monospace; font-size:11px; color:#f8fafc; background:#04060b; border:1px solid #1e293b; padding:6px 10px; border-radius:4px;">
                 <span style="color:#06b6d4;">vd@indore:~$</span> secure_coordinates_acquired
@@ -400,7 +367,6 @@ function initPortfolio() {
         `, { closeButton: false }).openPopup();
     }
 
-    /* --- 8. Viewport Scroll Spy & Fade Up reveal triggers --- */
     const fadeUpElements = document.querySelectorAll('.fade-up');
 
     const scrollObserver = new IntersectionObserver((entries) => {
@@ -416,15 +382,13 @@ function initPortfolio() {
 
     fadeUpElements.forEach(el => scrollObserver.observe(el));
 
-    // Instantly reveal Hero section elements on boot load
     const heroFadeUps = document.querySelectorAll('#hero .fade-up');
     heroFadeUps.forEach((el, index) => {
         setTimeout(() => {
             el.classList.add('visible');
-        }, index * 120 + 2000); // Trigger after preloader disappears
+        }, index * 120 + 2000); 
     });
 
-    /* --- 9. Custom Slide-Up Toast Notification HUD --- */
     const triggerToast = (message) => {
         const activeToast = document.querySelector('.dev-min-toast');
         if (activeToast) activeToast.remove();
@@ -438,13 +402,11 @@ function initPortfolio() {
 
         document.body.appendChild(toast);
 
-        // Slide up toast
         setTimeout(() => {
             toast.style.transform = 'translateY(0)';
             toast.style.opacity = '1';
         }, 50);
 
-        // Auto dismiss toast after 3.2s
         setTimeout(() => {
             toast.style.transform = 'translateY(15px)';
             toast.style.opacity = '0';
@@ -452,12 +414,10 @@ function initPortfolio() {
         }, 3200);
     };
 
-    /* --- 10. Interactive Secure Contact CLI form (Web3Forms API) --- */
     const contactCliForm = document.getElementById('contact-cli-form');
     const tunnelLogs = document.getElementById('tunnel-logs');
     const sshSubmitBtn = document.getElementById('ssh-submit-btn');
 
-    // Secure access key dispatching payloads
     const WEB3FORMS_ACCESS_KEY = '1bc0ec8a-fce5-4857-802a-fd108a15551c';
 
     if (contactCliForm && tunnelLogs && sshSubmitBtn) {
@@ -475,7 +435,6 @@ function initPortfolio() {
             sshSubmitBtn.style.opacity = '0.5';
             sshSubmitBtn.style.cursor = 'not-allowed';
 
-            // Logs script lines for rendering before dispatching transmission
             const prepLogs = [
                 { text: `vd-shell:~$ ssh -T connect_vs --payload_name="${cliNameVal}"`, class: '' },
                 { text: 'Initializing secure endpoint sockets...', class: '' },
@@ -527,7 +486,7 @@ function initPortfolio() {
                             printPostLogs();
                         })
                         .catch(err => {
-                            printPostLogs(); // Fallback simulation on dispatch failure
+                            printPostLogs();
                         });
                 } else {
                     setTimeout(printPostLogs, 800);
@@ -564,7 +523,6 @@ function initPortfolio() {
         });
     }
 
-    /* --- 11. Traditional Download and Live Actions toasts --- */
     const downloadActions = [
         document.getElementById('resume-download'),
         document.getElementById('resume-download-btn'),
@@ -592,7 +550,6 @@ function initPortfolio() {
         });
     });
 
-    /* --- 12. Dynamic Case Study Modals Engine --- */
     const caseStudiesData = {
         'apk-shield': {
             badge: 'SECURITY AUDITING ENGINE',
@@ -1102,25 +1059,21 @@ function initPortfolio() {
 
     let currentProjectKey = '';
 
-    // Load case study data into DOM based on project key
     const populateCaseStudyModal = (key) => {
         const data = caseStudiesData[key];
         if (!data) return;
 
         currentProjectKey = key;
         
-        // Header
         document.getElementById('modal-project-badge').textContent = data.badge;
         document.getElementById('modal-project-title').textContent = data.title;
         document.getElementById('modal-project-tagline').textContent = data.tagline;
 
-        // Content panes
         document.getElementById('pane-overview').innerHTML = data.overview;
         document.getElementById('pane-architecture').innerHTML = data.architecture;
         document.getElementById('pane-challenges').innerHTML = data.challenges;
         document.getElementById('pane-schema').innerHTML = data.schema;
 
-        // Reset to first tab
         switchModalTab('overview');
     };
 
@@ -1146,15 +1099,14 @@ function initPortfolio() {
     const openCaseStudyModal = (key) => {
         populateCaseStudyModal(key);
         caseStudyModal.classList.add('open');
-        document.body.style.overflow = 'hidden'; // Lock scrolling
+        document.body.style.overflow = 'hidden'; 
     };
 
     const closeCaseStudyModal = () => {
         caseStudyModal.classList.remove('open');
-        document.body.style.overflow = ''; // Unlock scrolling
+        document.body.style.overflow = ''; 
     };
 
-    // Event listeners for triggers
     caseStudyTriggers.forEach(btn => {
         btn.addEventListener('click', () => {
             const key = btn.getAttribute('data-project');
@@ -1167,7 +1119,6 @@ function initPortfolio() {
     }
 
     if (caseStudyModal) {
-        // Close on backdrop click
         caseStudyModal.addEventListener('click', (e) => {
             if (e.target === caseStudyModal) {
                 closeCaseStudyModal();
@@ -1175,14 +1126,12 @@ function initPortfolio() {
         });
     }
 
-    // Close on escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && caseStudyModal && caseStudyModal.classList.contains('open')) {
             closeCaseStudyModal();
         }
     });
 
-    // Tab button click handlers
     modalTabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const tabName = tab.getAttribute('data-tab');
@@ -1190,7 +1139,6 @@ function initPortfolio() {
         });
     });
 
-    /* --- 13. About Section Dossier Progress Card Scroll Observer --- */
     const aboutSection = document.getElementById('about');
     if (aboutSection) {
         let progressAnimated = false;
@@ -1222,7 +1170,6 @@ function initPortfolio() {
         aboutObserver.observe(aboutSection);
     }
 
-    /* --- 14. Repeating APK Decompiler Terminal Scan Loop --- */
     const decompilerScreen = document.getElementById('decompiler-log-screen');
     if (decompilerScreen) {
         const scanCommandsList = [
@@ -1277,17 +1224,15 @@ function initPortfolio() {
                     lineIndex++;
                     setTimeout(printNextLogLine, 350);
                 } else {
-                    // Update visual progress bars dynamically
                     const redFill = document.querySelector('.fill-red');
                     const yellowFill = document.querySelector('.fill-yellow');
                     if (redFill && yellowFill) {
-                        const randomRed = Math.floor(Math.random() * 40) + 50; // 50% to 90%
-                        const randomYellow = Math.floor(Math.random() * 30) + 30; // 30% to 60%
+                        const randomRed = Math.floor(Math.random() * 40) + 50; 
+                        const randomYellow = Math.floor(Math.random() * 30) + 30; 
                         redFill.style.width = `${randomRed}%`;
                         yellowFill.style.width = `${randomYellow}%`;
                     }
                     
-                    // Next scan iteration trigger
                     scanLoopIndex++;
                     setTimeout(executeTerminalScan, 5000);
                 }
@@ -1295,8 +1240,6 @@ function initPortfolio() {
 
             printNextLogLine();
         };
-
-        // Start repeating scanning loop after 2.5 seconds (post-preloader reveal)
         setTimeout(executeTerminalScan, 4500);
     }
 }
