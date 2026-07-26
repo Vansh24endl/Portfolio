@@ -11,18 +11,14 @@
         content="Vansh Dhumal, Full-Stack Developer, AI Systems, Cybersecurity, Image Processing, React, Next.js, portfolio, SVIIT, Indore">
     <meta name="author" content="Vansh Dhumal">
 
-    <!-- Tab Icon -->
     <link rel="icon" type="image/png"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%236366f1%22 font-weight=%22bold%22>VS</text></svg>">
 
-    <!-- Leaflet CSS CDN for Map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Zero-Flash Theme Script -->
     <script>
         (function() {
             const savedTheme = localStorage.getItem('theme') || 'system';
@@ -37,16 +33,12 @@
 
 <body>
 
-    <!-- Tactical Tech Grid Overlay -->
     <div class="tech-grid-overlay"></div>
 
-    <!-- Glowing Background Mesh Layers -->
     <div class="bg-glow-container">
         <div class="bg-glow bg-glow-1"></div>
         <div class="bg-glow bg-glow-2"></div>
     </div>
-
-    <!-- Digital HUD preloader Screen -->
     <div class="loader-root" id="preloader">
         <div class="loader-petals" id="loader-particles"></div>
         <div class="loader-center">
@@ -57,11 +49,9 @@
         </div>
     </div>
 
-    <!-- High-Precision Custom Follower HUD Cursors -->
     <div class="custom-cursor" id="custom-cursor"></div>
     <div class="custom-cursor-glow" id="custom-cursor-glow"></div>
 
-    <!-- STICKY TRANSLUCENT GLASS NAVIGATION BAR -->
     <nav class="navbar" id="navbar">
         <a href="#hero" class="nav-logo" id="nav-logo">VS</a>
         <ul class="nav-links" id="nav-links">
@@ -74,7 +64,6 @@
                     id="resume-download">Resume ↓</a></li>
             <li>
                 <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Cycle Theme Options">
-                    <!-- Icon loaded by JS -->
                 </button>
             </li>
         </ul>
@@ -84,19 +73,14 @@
             <span class="bar"></span>
         </button>
     </nav>
-
-    <!-- HERO SECTION -->
     <section id="hero">
         <div class="hero-container">
-
-            <!-- Hero Left: Bio & Telemetry CTAs -->
             <div class="hero-left">
                 <div class="hero-badge fade-up">
                     <span class="pulse-dot"></span> Available for Opportunities · Indore, India
                 </div>
                 <h1 class="hero-name fade-up">VANSH<br><span class="gradient-text">DHUMAL</span></h1>
 
-                <!-- Dynamic Role Telemetry Text -->
                 <div class="hero-role-wrapper fade-up">
                     <span class="role-static">I am a </span>
                     <span class="gradient-text-alt" id="role-dynamic-text">Full-Stack Developer</span>
@@ -121,7 +105,6 @@
                     <a href="#contact" class="btn-outline">Access Shell Console</a>
                 </div>
 
-                <!-- Hero Left Social Links -->
                 <div class="hero-socials fade-up">
                     <a href="https://www.linkedin.com/in/vansh-dhumal-a4906a287" target="_blank"
                         class="social-icon-link" aria-label="LinkedIn">
@@ -159,12 +142,9 @@
                     <!-- Ambient Glow -->
                     <div class="hud-glow-orb"></div>
 
-                    <!-- Sleek Portrait Frame -->
                     <div class="hero-image-frame">
                         <img src="developer_portrait.png" alt="Vansh Dhumal" class="hero-portrait">
-                    </div>
-
-                    <!-- Decorative Floating HUD Console -->
+                    </div>->
                     <div class="floating-terminal terminal-mockup">
                         <div class="terminal-header">
                             <span class="term-dot close"></span>
@@ -183,7 +163,6 @@
                         </div>
                     </div>
 
-                    <!-- Floating Tech Badges with Floating Animations -->
                     <div class="floating-tech-icon tech-java" title="Java">
                         <span class="tech-icon-label">
                             <svg viewBox="0 0 24 24" class="m-svg" fill="none" stroke="currentColor" stroke-width="2"
@@ -245,15 +224,11 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION PLACEHOLDER -->
     <div id="about-placeholder"></div>
 
-    <!-- SKILLS SECTION (LAYERED TECHNOLOGY MATRIX) -->
     <section id="skills">
         <p class="section-label fade-up">02 / Technology Stack Matrix</p>
         <h2 class="section-title fade-up">System Layer Representation</h2>
-
-        <!-- Top infinite Marquee Track (Scroll Left) -->
         <div class="skills-marquee-border border-top fade-up">
             <div class="marquee-track scroll-left">
                 <div class="marquee-item">
@@ -366,10 +341,8 @@
             </div>
         </div>
 
-        <!-- High-fidelity Skills Category Grid (Inspired by reference image) -->
         <div class="skills-grid-container fade-up">
 
-            <!-- Card 1: Languages -->
             <div class="skills-category-card">
                 <span class="skills-category-title">Languages</span>
                 <div class="skills-tags-list">
@@ -382,7 +355,6 @@
                 </div>
             </div>
 
-            <!-- Card 2: Frontend -->
             <div class="skills-category-card">
                 <span class="skills-category-title">Frontend</span>
                 <div class="skills-tags-list">
@@ -395,20 +367,18 @@
                 </div>
             </div>
 
-            <!-- Card 3: Backend -->
             <div class="skills-category-card">
                 <span class="skills-category-title">Backend</span>
                 <div class="skills-tags-list">
                     <span class="skills-tag-pill tag-spring">Spring Boot</span>
                     <span class="skills-tag-pill tag-node">Node.js</span>
                     <span class="skills-tag-pill tag-express">Express.js</span>
-                    <span class="skills-tag-pill tag-api">REST APIs</span>
+                    <!-- <span class="skills-tag-pill tag-api">REST APIs</span> -->
                     <span class="skills-tag-pill tag-express">Flask</span>
                     <span class="skills-tag-pill tag-sec">Supabase</span>
                 </div>
             </div>
 
-            <!-- Card 4: Databases -->
             <div class="skills-category-card">
                 <span class="skills-category-title">Databases</span>
                 <div class="skills-tags-list">
@@ -420,12 +390,11 @@
                 </div>
             </div>
 
-            <!-- Card 5: ML & Systems -->
             <div class="skills-category-card">
                 <span class="skills-category-title">ML & Systems</span>
                 <div class="skills-tags-list">
                     <span class="skills-tag-pill tag-image">OpenCV</span>
-                    <span class="skills-tag-pill tag-ai">TensorFlow</span>
+                    <!-- <span class="skills-tag-pill tag-ai">TensorFlow</span> -->
                     <span class="skills-tag-pill tag-python">Scikit-learn</span>
                     <span class="skills-tag-pill tag-python">Pandas</span>
                     <span class="skills-tag-pill tag-python">NumPy</span>
@@ -433,15 +402,15 @@
                 </div>
             </div>
 
-            <!-- Card 6: Tools & CS Concepts -->
+ 
             <div class="skills-category-card">
                 <span class="skills-category-title">Tools & CS Concepts</span>
                 <div class="skills-tags-list">
                     <span class="skills-tag-pill tag-git">Git</span>
                     <span class="skills-tag-pill tag-github">GitHub</span>
                     <span class="skills-tag-pill tag-docker">Docker</span>
-                    <span class="skills-tag-pill tag-aws">AWS Cloud</span>
-                    <span class="skills-tag-pill tag-api">Postman</span>
+                    <!-- <span class="skills-tag-pill tag-aws">AWS Cloud</span> -->
+                    <!-- <span class="skills-tag-pill tag-api">Postman</span> -->
                     <span class="skills-tag-pill tag-linux">Linux</span>
                     <span class="skills-tag-pill tag-design">DSA</span>
                     <span class="skills-tag-pill tag-cpp">OOP</span>
@@ -452,7 +421,6 @@
 
         </div>
 
-        <!-- Bottom infinite Marquee Track (Scroll Right) -->
         <div class="skills-marquee-border border-bottom fade-up">
             <div class="marquee-track scroll-right">
                 <div class="marquee-item">
@@ -565,9 +533,9 @@
             </div>
         </div>
     </section>
-    <!-- PROJECTS SECTION (SYSTEM BLUEPRINTS & CASE STUDIES) -->
+
     <section id="projects">
-        <!-- Floating decoration shapes -->
+
         <div class="page-decor">
             <div class="shape s2"></div>
             <div class="shape s3"></div>
@@ -669,7 +637,6 @@
                     <span class="mock-dot maximize"></span>
                     <span class="mock-date">VD_MOD_SECURE_SHARE</span>
                 </div>
-                <!-- Interactive Hover Image Preview -->
                 <div class="project-hover-preview">
                     <img src="secure_file_share_preview.png" alt="Secure File Share Preview" class="hover-preview-img">
                 </div>
@@ -698,7 +665,6 @@
                 </div>
             </div>
 
-            <!-- Major Project 2: Spring Boot Banking Application -->
             <div class="project-card fade-up">
                 <div class="project-mockup-header">
                     <span class="mock-dot close"></span>
@@ -751,7 +717,6 @@
 
         <div class="academic-grid">
 
-            <!-- Left Timeline Track -->
             <div class="timeline-column fade-up">
                 <h3 class="track-col-title">Academic Track</h3>
                 <div class="edu-timeline">
@@ -780,7 +745,6 @@
                 </div>
             </div>
 
-            <!-- Right Certifications Track -->
             <div class="certs-column fade-up">
                 <h3 class="track-col-title">NPTEL Credentials</h3>
                 <div class="cert-grid">
@@ -807,9 +771,7 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION (THE SECURE TUNNEL SHELL & LEAFLET MAP) -->
     <section id="contact">
-        <!-- Floating background shapes -->
         <div class="contact-decor">
             <div class="shape s1"></div>
             <div class="shape s2"></div>
@@ -822,9 +784,8 @@
                 encrypted tunnel connection and transmit your message payload.</p>
         </div>
 
-        <!-- Dual Column Contact Panel -->
+
         <div class="contact-layout fade-up">
-            <!-- Left Info Panel with coordinates Leaflet Map -->
             <div class="info-wrap">
                 <div class="contact-stack">
                     <div class="info-item">
@@ -899,13 +860,11 @@
                     </div>
                 </div>
 
-                <!-- Coordinates HUD Map Card -->
                 <div class="contact-map">
                     <div id="contact-map" class="contact-leaflet-map"></div>
                 </div>
             </div>
 
-            <!-- Right Column Interactive Secure CLI form -->
             <div class="contact-terminal-shell">
                 <div class="terminal-header">
                     <span class="term-dot close"></span>
@@ -939,7 +898,6 @@
                                 required></textarea>
                         </div>
 
-                        <!-- Action Submit button -->
                         <div class="cli-input-line justify-end">
                             <button type="submit" class="ssh-tunnel-btn" id="ssh-submit-btn">
                                 <span class="btn-ssh-text">ssh -T connect_vs</span>
@@ -947,7 +905,6 @@
                         </div>
                     </form>
 
-                    <!-- Simulated log printout -->
                     <div class="tunnel-logs" id="tunnel-logs"></div>
 
                 </div>
@@ -967,15 +924,11 @@
             </a>
         </div>
     </section>
-
-    <!-- FOOTER -->
     <hr class="divider">
     <footer>
         <span>© 2026 <strong>Vansh Dhumal</strong>. All rights reserved.</span>
         <span>Code. Build. Secure. Repeat.</span>
     </footer>
-
-    <!-- CASE STUDY INTERACTIVE MODAL overlay -->
     <div class="modal-overlay" id="case-study-modal">
         <div class="modal-card">
             <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Case Study Modal">×</button>
@@ -988,7 +941,6 @@
                 <p class="modal-tagline" id="modal-project-tagline">PROJECT_TAGLINE_PLACEHOLDER</p>
             </div>
             
-            <!-- Modal navigation tabs -->
             <div class="modal-tabs">
                 <button class="modal-tab active" data-tab="overview">Overview & Metrics</button>
                 <button class="modal-tab" data-tab="architecture">System Design</button>
@@ -996,29 +948,21 @@
                 <button class="modal-tab" data-tab="schema">DB & API Telemetry</button>
             </div>
             
-            <!-- Modal dynamic container -->
             <div class="modal-body-container">
                 <div class="modal-tab-pane active" id="pane-overview">
-                    <!-- Dynamic overview details will render here -->
                 </div>
                 <div class="modal-tab-pane" id="pane-architecture">
-                    <!-- Dynamic flowchart node structures will render here -->
                 </div>
                 <div class="modal-tab-pane" id="pane-challenges">
-                    <!-- Dynamic challenges details will render here -->
                 </div>
                 <div class="modal-tab-pane" id="pane-schema">
-                    <!-- Dynamic DB schemas / API details will render here -->
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Leaflet JS (Global L) loaded before app script -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-    <!-- JavaScript Bundle -->
     <script src="script.js"></script>
 </body>
 
