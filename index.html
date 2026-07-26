@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="styles.css">
 
     <script>
-        (function() {
+        (function () {
             const savedTheme = localStorage.getItem('theme') || 'system';
             let themeToApply = savedTheme;
             if (savedTheme === 'system') {
@@ -147,6 +147,7 @@
                     </div>
 
                     <!-- Decorative Floating HUD Console -->
+>>>>>>> 117fbe1 (origin)
                     <div class="floating-terminal terminal-mockup">
                         <div class="terminal-header">
                             <span class="term-dot close"></span>
@@ -404,7 +405,7 @@
                 </div>
             </div>
 
- 
+
             <div class="skills-category-card">
                 <span class="skills-category-title">Tools & CS Concepts</span>
                 <div class="skills-tags-list">
@@ -559,10 +560,14 @@
                     <div class="featured-project-info">
                         <div class="featured-badge"> Featured Core System</div>
                         <h3 class="featured-title">APK Shield</h3>
-                        <p class="featured-subtitle">Android Static Binary Security Auditor & Malware Scanning Engine</p>
-                        
-                        <p class="project-desc">A security scanning engine that parses Android binaries (.apk), decompiles DEX files on-the-fly, audits AndroidManifest.xml permissions for vulnerability vectors, and uses regex/signature rules to detect 15+ hardcoded credentials and potential security vulnerabilities.</p>
-                        
+                        <p class="featured-subtitle">Android Static Binary Security Auditor & Malware Scanning Engine
+                        </p>
+
+                        <p class="project-desc">A security scanning engine that parses Android binaries (.apk),
+                            decompiles DEX files on-the-fly, audits AndroidManifest.xml permissions for vulnerability
+                            vectors, and uses regex/signature rules to detect 15+ hardcoded credentials and potential
+                            security vulnerabilities.</p>
+
                         <div class="featured-metrics-row">
                             <div class="metric-item">
                                 <span class="metric-num">500+</span>
@@ -589,11 +594,20 @@
 
                         <div class="project-links">
                             <button class="proj-link case-study-btn" data-project="apk-shield">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="link-svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="link-svg">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
                                 Systems Design & Case Study
                             </button>
-                            <a href="https://apk-shield-iota.vercel.app/" target="_blank" class="proj-link live-tunnel">Live Tunnel ↗</a>
-                            <a href="https://github.com/Vansh24endl/ApkShield" target="_blank" class="proj-link gh">Inspect Code</a>
+                            <a href="https://apk-shield-iota.vercel.app/" target="_blank"
+                                class="proj-link live-tunnel">Live Tunnel ↗</a>
+                            <a href="https://github.com/Vansh24endl/ApkShield" target="_blank"
+                                class="proj-link gh">Inspect Code</a>
                         </div>
                     </div>
 
@@ -604,24 +618,34 @@
                                 <span class="panel-title">vd-decompiler@scanner:~</span>
                             </div>
                             <div class="panel-screen" id="decompiler-log-screen">
-                                <div class="screen-line"><span class="prompt-text">vd$</span> scan --file="vulnerable-banking.apk"</div>
+                                <div class="screen-line"><span class="prompt-text">vd$</span> scan
+                                    --file="vulnerable-banking.apk"</div>
                                 <div class="screen-line info-line">&gt; Initializing static file scanner...</div>
                                 <div class="screen-line info-line">&gt; Unzipping Android archive files... [OK]</div>
-                                <div class="screen-line info-line">&gt; Extracting resource tables & layouts... [OK]</div>
+                                <div class="screen-line info-line">&gt; Extracting resource tables & layouts... [OK]
+                                </div>
                                 <div class="screen-line warn-line">&gt; Checking manifest permissions... [WARN]</div>
-                                <div class="screen-line warn-detail">&gt; Flagged: android.permission.RECEIVE_BOOT_COMPLETED</div>
-                                <div class="screen-line info-line">&gt; Running signature match algorithms on DEX... [OK]</div>
-                                <div class="screen-line-alert">&gt; ALERT: Found exposed AES key in Lcom/api/AuthHandler; (AES-256)</div>
-                                <div class="screen-line error-line">&gt; SECURITY RATING: 2.8/10 (CRITICAL FLAWS DETECTED)</div>
+                                <div class="screen-line warn-detail">&gt; Flagged:
+                                    android.permission.RECEIVE_BOOT_COMPLETED</div>
+                                <div class="screen-line info-line">&gt; Running signature match algorithms on DEX...
+                                    [OK]</div>
+                                <div class="screen-line-alert">&gt; ALERT: Found exposed AES key in
+                                    Lcom/api/AuthHandler; (AES-256)</div>
+                                <div class="screen-line error-line">&gt; SECURITY RATING: 2.8/10 (CRITICAL FLAWS
+                                    DETECTED)</div>
                             </div>
                             <div class="panel-metrics-visual">
                                 <div class="visual-metric">
                                     <span class="v-label">Permissions Risk</span>
-                                    <div class="v-bar"><div class="v-bar-fill fill-red" style="width: 82%;"></div></div>
+                                    <div class="v-bar">
+                                        <div class="v-bar-fill fill-red" style="width: 82%;"></div>
+                                    </div>
                                 </div>
                                 <div class="visual-metric">
                                     <span class="v-label">Signature Matches</span>
-                                    <div class="v-bar"><div class="v-bar-fill fill-yellow" style="width: 48%;"></div></div>
+                                    <div class="v-bar">
+                                        <div class="v-bar-fill fill-yellow" style="width: 48%;"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -640,13 +664,16 @@
                     <span class="mock-date">VD_MOD_SECURE_SHARE</span>
                 </div>
                 <div class="project-hover-preview">
-                    <img src="images/secure_file_share_preview.png" alt="Secure File Share Preview" class="hover-preview-img">
+                    <img src="images/secure_file_share_preview.png" alt="Secure File Share Preview"
+                        class="hover-preview-img">
                 </div>
                 <div class="project-content">
                     <div class="project-badge-top"> Cryptographic Channel</div>
                     <div class="project-title">Secure File Share</div>
-                    <p class="project-desc">End-to-end encrypted MERN platform for secure file transfers, implementing Web Crypto API (AES-256-GCM data chunk encryption, RSA-2048 client key wrapping), role-based JWT session authorization, and automated metadata purging.</p>
-                    
+                    <p class="project-desc">End-to-end encrypted MERN platform for secure file transfers, implementing
+                        Web Crypto API (AES-256-GCM data chunk encryption, RSA-2048 client key wrapping), role-based JWT
+                        session authorization, and automated metadata purging.</p>
+
                     <div class="project-metrics-chips">
                         <span class="metric-chip" title="Active users proof">👥 Used by 30+ Students</span>
                         <span class="metric-chip" title="Cryptographic payload protection">🔑 AES-256 & RSA-2048</span>
@@ -676,13 +703,16 @@
                 </div>
                 <!-- Interactive Hover Image Preview -->
                 <div class="project-hover-preview">
-                    <img src="images/springboot_banking_preview.png" alt="Spring Boot Banking Preview" class="hover-preview-img">
+                    <img src="images/springboot_banking_preview.png" alt="Spring Boot Banking Preview"
+                        class="hover-preview-img">
                 </div>
                 <div class="project-content">
                     <div class="project-badge-top"> Transactional Engine</div>
                     <div class="project-title">Java Spring Boot Banking</div>
-                    <p class="project-desc">High-performance transaction handling API designed with Spring Boot, Spring Security (role-based stateless JWT), and JPA Hibernate. Features concurrent transaction safety, relational schema with 10+ tables, and secure balance calculations.</p>
-                    
+                    <p class="project-desc">High-performance transaction handling API designed with Spring Boot, Spring
+                        Security (role-based stateless JWT), and JPA Hibernate. Features concurrent transaction safety,
+                        relational schema with 10+ tables, and secure balance calculations.</p>
+
                     <div class="project-metrics-chips">
                         <span class="metric-chip" title="Concurrency safety">⚡ 1,000+ Concurrent Req</span>
                         <span class="metric-chip" title="Database schema size">🗄️ 10+ Relational Tables</span>
@@ -697,17 +727,24 @@
                     </div>
                     <div class="project-links">
                         <button class="proj-link case-study-btn" data-project="springboot-banking">Case Study</button>
-                        <a href="https://github.com/Vansh24endl/javaStart/tree/main/Project" target="_blank" class="proj-link gh">Inspect Code</a>
+                        <a href="https://github.com/Vansh24endl/javaStart/tree/main/Project" target="_blank"
+                            class="proj-link gh">Inspect Code</a>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="view-more-container fade-up" style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">
-            <p class="section-label" style="margin-bottom: 0.5rem; letter-spacing: 0.15em;">Looking for more blueprints?</p>
-            <a href="project.html" class="btn-outline" id="view-more-projects-btn" style="display: inline-flex; align-items: center; gap: 8px;">
+            <p class="section-label" style="margin-bottom: 0.5rem; letter-spacing: 0.15em;">Looking for more blueprints?
+            </p>
+            <a href="project.html" class="btn-outline" id="view-more-projects-btn"
+                style="display: inline-flex; align-items: center; gap: 8px;">
                 View Other Engineered Systems
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
             </a>
         </div>
     </section>
@@ -755,7 +792,9 @@
                         <div class="cert-icon">☕</div>
                         <div class="cert-info-block">
                             <div class="cert-title">NPTEL - Programming in Java (Advanced)</div>
-                            <div class="cert-desc">Elite certification covering multithreading complexity, socket programming, generic classes, database connectivity (JDBC), and advanced language features.</div>
+                            <div class="cert-desc">Elite certification covering multithreading complexity, socket
+                                programming, generic classes, database connectivity (JDBC), and advanced language
+                                features.</div>
                         </div>
                     </div>
 
@@ -763,7 +802,9 @@
                         <div class="cert-icon">🗄️</div>
                         <div class="cert-info-block">
                             <div class="cert-title">NPTEL - Database Management System (DBMS)</div>
-                            <div class="cert-desc">Comprehensive certification covering relational data models, SQL queries, transaction management (ACID), concurrency control, and schema optimization.</div>
+                            <div class="cert-desc">Comprehensive certification covering relational data models, SQL
+                                queries, transaction management (ACID), concurrency control, and schema optimization.
+                            </div>
                         </div>
                     </div>
 
@@ -942,14 +983,14 @@
                 <h2 class="modal-title" id="modal-project-title">PROJECT_TITLE_PLACEHOLDER</h2>
                 <p class="modal-tagline" id="modal-project-tagline">PROJECT_TAGLINE_PLACEHOLDER</p>
             </div>
-            
+
             <div class="modal-tabs">
                 <button class="modal-tab active" data-tab="overview">Overview & Metrics</button>
                 <button class="modal-tab" data-tab="architecture">System Design</button>
                 <button class="modal-tab" data-tab="challenges">Engineering Wins</button>
                 <button class="modal-tab" data-tab="schema">DB & API Telemetry</button>
             </div>
-            
+
             <div class="modal-body-container">
                 <div class="modal-tab-pane active" id="pane-overview">
                 </div>
